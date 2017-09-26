@@ -29,7 +29,6 @@ public:
         count++;
     }
 
-    voidsetDist(int f, float i)
     /* Constructor with two arguments */
     Distance(int ft, float in): feet(ft), inches(in)
     {/*empty body*/}
@@ -60,6 +59,7 @@ public:
 int Distance::count = 0;
 
 // Prototypes
+void ShowCurrentCount(Distance d1);
 
 
 
@@ -87,7 +87,7 @@ int main(void)
 
     // Use methods to set/access data
 
-
+    ShowCurrentCount(d4);
 
 
     return 0;
@@ -126,4 +126,9 @@ Distance Distance::add_dist_tome(Distance d1)
     temp.feet += feet +d1.feet;
 
     return temp;
+}
+void ShowCurrentCount(Distance d1)
+{
+    cout<<"The current count in my super class is "
+        <<d1.getCount() << endl;
 }
