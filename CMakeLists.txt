@@ -3,5 +3,5 @@ project(firstClass)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES counter.cpp)
+set(SOURCE_FILES distanceClass.cpp)
 add_executable(firstClass ${SOURCE_FILES})

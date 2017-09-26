@@ -23,9 +23,6 @@ private:
 public:
     void setDist(int f, float i)
     {
-        int cm;
-
-        cm = c;
         feet = f;
         inches = i;
     }
