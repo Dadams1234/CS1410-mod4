@@ -45,7 +45,10 @@ public:
         cout <<" Feet "<<feet<<" and inches "<<inches<<endl;
     }
     void add_dist(Distance d1, Distance d2);
+    Distance add_dist_tome(Distance d1)
+    {
 
+    }
 };
 
 
@@ -60,15 +63,18 @@ int main(void)
     // Create an instance "instantiate" the class
     Distance d1, d4;
     d1.showDist();
-
     Distance d2(8, 2);
+    cout<<"\nd2 = ";
+    Distance d3(2, 4);
+    cout<<"\nd2 = ";
     d2.showDist();
     cout<<"\nd3 = ";
-    Distance d3(2, 4);
-    cout<<"\ndD3 = ";
     d3.showDist();
-    d4.add_dist(d2, d3);
     cout<<"\nD4 = ";
+    d4.showDist();
+
+    d4.add_dist_tome(d2);
+    cout<<"\nd4 new = ";
     d4.showDist();
 
     // Use methods to set/access data
@@ -97,4 +103,19 @@ void Distance::add_dist(Distance d1, Distance d2)
         feet++;                 // check for extra foot
     }
     feet += d1.feet + d2.feet;  // add feet
+}
+Distance Distance::add_dist_tome(Distance d1)
+{
+    Distance temp;
+    temp.inches = inches +d1.inches;
+    if(temp.inches >= 12.0)
+    {
+        temp.inches -= 12.0;
+        //temp.feet = 1
+        temp.feet += 1;
+
+    }
+    temp.feet += feet +d1.feet;
+
+    return temp;
 }
